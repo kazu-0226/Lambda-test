@@ -1,0 +1,14 @@
+service: serverless-simple-http-endpoint
+
+provider:
+  name: aws
+  profile: serverless-admin
+  runtime: nodejs12.x
+
+functions:
+  currentTime:
+    handler: handler.endpoint
+    events:
+      - http:
+          path: ping
+          method: get
